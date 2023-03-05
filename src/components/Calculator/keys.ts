@@ -1,4 +1,6 @@
-export const keys = [
+import type { Key } from "@/types/calc.types";
+
+export const keys: Array<Key> = [
   {
     value: 1,
   },

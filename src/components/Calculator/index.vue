@@ -1,10 +1,10 @@
 <template>
-  <div class="w-96 mx-auto">
+  <div class="w-96 mx-auto border border-gray-700 rounded-md p-2">
     <div class="grid grid-cols-4 gap-4 mb-3">
       <div class="col-span-2 p-5 border border-gray-800 rounded-md">
         {{ expresion }}
       </div>
-      <div class="key--top">M</div>
+      <div class="key--top" @click="saveResultExpression()">M</div>
       <div class="key--top" @click="expresion = ''">C</div>
     </div>
     <div class="grid grid-cols-4 gap-4 mx-auto">
@@ -29,13 +29,31 @@ import { keys } from "./keys";
 import MathService from "@/services/math.service";
 import ExpressionService from "@/services/expression.service";
 
+//store
+import { CalcModule } from "@/store/modules";
+
+//types
+import type { Key } from "@/types/calc.types";
+
 @Component({})
 export default class Calculator extends Vue {
   keys = keys;
 
   expresion: string = "";
 
-  buildExpression(item: any) {
+  saveResultExpression() {
+    try {
+      if (this.expresion !== "") {
+        CalcModule.setResult(this.expresion);
+      } else {
+        this.expresion = CalcModule.savedResult;
+      }
+    } catch (error: any) {
+      window.alert(error);
+    }
+  }
+
+  buildExpression(item: Key) {
     switch (item.value) {
       case "=":
         try {
