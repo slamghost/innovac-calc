@@ -1,0 +1,33 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.ts"],
+  "compilerOptions": {   
+  "types":["node"],
+  "target": "ESNext",
+  "module": "ESNext",
+  "strict": true,
+  "jsx": "preserve",
+  "importHelpers": true,
+  "moduleResolution": "node",   
+  "skipLibCheck": true,
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
+  "sourceMap": true,
+  "resolveJsonModule": true,
+  "noImplicitAny": false,
+  "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ],
+    "exclude": [
+    "node_modules"
+  ]
+}
