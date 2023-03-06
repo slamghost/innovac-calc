@@ -4,8 +4,8 @@
       <div class="col-span-2 py-5 px-2 break-words border border-gray-800 rounded-md text-sm">
         {{ expresion }}
       </div>
-      <div class="key--top" @click="saveResultExpression()">M</div>
-      <div class="key--top" @click="expresion = ''">C</div>
+      <button class="key--top" @click="saveResultExpression()">M</button>
+      <button class="key--top" @click="expresion = ''">C</button>
     </div>
     <div class="grid grid-cols-4 gap-4 mx-auto">
       <button
