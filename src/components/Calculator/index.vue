@@ -1,21 +1,21 @@
 <template>
   <div class="w-96 mx-auto border border-gray-700 rounded-md p-2">
     <div class="grid grid-cols-4 gap-4 mb-3">
-      <div class="col-span-2 p-5 border border-gray-800 rounded-md">
+      <div class="col-span-2 py-5 px-2 break-words border border-gray-800 rounded-md text-sm">
         {{ expresion }}
       </div>
       <div class="key--top" @click="saveResultExpression()">M</div>
       <div class="key--top" @click="expresion = ''">C</div>
     </div>
     <div class="grid grid-cols-4 gap-4 mx-auto">
-      <div
+      <button
         class="key"
         v-for="(item, index) in keys"
         :key="index"
         @click="buildExpression(item)"
       >
         {{ item.value }}
-      </div>
+      </button>
     </div>
   </div>
 </template>
