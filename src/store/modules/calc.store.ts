@@ -9,11 +9,9 @@ class CalcState extends VuexModule {
 
     result: string = "";
 
-
     get savedResult(): string {
         return this.result;
     }
-
 
     @Mutation
     setResult(number: string) {

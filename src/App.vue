@@ -5,7 +5,6 @@
         <h2>Calculator</h2>
       </div>
     </header>
-
     <main>
         <Calculator />
     </main>
